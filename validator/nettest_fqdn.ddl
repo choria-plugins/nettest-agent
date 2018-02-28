@@ -2,8 +2,8 @@ metadata :name => "nettest_fqdn",
          :description => "Validates that a string is a fully qualified domain name",
          :author => "P. Loubser <pieter.loubser@puppetlabs.com>",
          :license => "BSD",
-         :version => "1.0.0",
-         :url => "http://marionette-collective.org/",
+         :version => "3.0.4",
+         :url => "https://github.com/choria-plugins/nettest-agent",
          :timeout => 1
 
 usage <<-END_OF_USAGE

@@ -1,7 +1,6 @@
 # Changelog
 
-Change history for mcollective-nettest.
-
+Change history for choria/mcollective_nettest_agent
 
 ## 3.0.4
 
