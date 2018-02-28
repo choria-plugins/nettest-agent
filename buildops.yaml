@@ -1,4 +1,0 @@
----
-  build: true
-  dependencies:
-    - ruby-net-ping

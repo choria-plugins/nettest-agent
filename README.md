@@ -1,18 +1,26 @@
-Nettest agent
-=============
+# Choria Nettest agent
 
-This is a simple agent that will execute a ping or remote connection test on mcollective hosts
+This is an agent that will execute a ping or remote connection test on mcollective hosts
 
 I often find myself logging onto boxes to ping different sites to diagnose local or remote network issues, this means I can now just issue a single command and get results from anywhere I’m running mcollective.
 
-Installation
-------------
+## Installation
 
-* Install RubyGem [Net::Ping](http://raa.ruby-lang.org/project/net-ping/)
-* Follow the [basic plugin install guide](http://projects.puppetlabs.com/projects/mcollective-plugins/wiki/InstalingPlugins)
+Install the `Net::Ping` RubyGem on all your agent nodes:
 
-Usage
------
+```yaml
+mcollective_agent_nettest::gem_dependencies:
+  "net-ping": "2.0.2"
+```
+
+Add the agent and client:
+
+```yaml
+mcollective::plugin_classes:
+  - mcollective_agent_youragent
+```
+
+## Usage
 
 ICMP ping test:
 
@@ -44,8 +52,7 @@ TCP connection test to port 8140:
 
     $ mco nettest connect hostname 8140
 
-Validator
----------
+## Validator
 
 The nettest agent supplies an fqdn validator which will validate if a string is a valid uri.
 
@@ -55,15 +62,13 @@ The nettest agent supplies a server address validator which will validate that a
 
     validate :serveraddress, :nettest_server_address
 
-Data Plugin
------------
+## Data Plugin
 
 The nettest agent also supplies a data plugin which uses the nettest agent to check if a connection to a fqdn at a specific port can be made. The data plugin will return 'true' or 'false' and can be used during discovery or any other place where the MCollective discovery language is used.
 
     $ mco rpc rpcutil -S "Nettest('myhost', '8080').connect=true"
 
-Mma Aggregate Plugin
---------------------
+## Mma Aggregate Plugin
 
 The nettest agent supplies a mma aggregate plugin which will determine the minimum value, maximum value and average value of a set of inputs determinted in a DDL.
 
