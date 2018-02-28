@@ -2,7 +2,7 @@ metadata :name => "nettest_fqdn",
          :description => "Validates that a string is a fully qualified domain name",
          :author => "P. Loubser <pieter.loubser@puppetlabs.com>",
          :license => "BSD",
-         :version => "3.0.4",
+         :version => "4.0.0",
          :url => "https://github.com/choria-plugins/nettest-agent",
          :timeout => 1
 
