@@ -2,6 +2,12 @@
 
 Change history for choria/mcollective_nettest_agent
 
+## 4.0.0
+
+Release 2018-02-28
+
+ * Initial release as part of the Choria Project
+
 ## 3.0.4
 
 Released 2014-07-18
