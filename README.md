@@ -17,7 +17,7 @@ Add the agent and client:
 
 ```yaml
 mcollective::plugin_classes:
-  - mcollective_agent_youragent
+  - mcollective_agent_nettest
 ```
 
 ## Usage
