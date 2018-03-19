@@ -1,6 +1,12 @@
 # Changelog
 
-Change history for choria/mcollective_nettest_agent
+Change history for choria/mcollective_agent_nettest
+
+## 4.0.1
+
+Release 2018-03-19
+
+ * Documentation update
 
 ## 4.0.0
 
