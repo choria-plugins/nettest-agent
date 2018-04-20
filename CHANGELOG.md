@@ -2,6 +2,13 @@
 
 Change history for choria/mcollective_agent_nettest
 
+## 4.0.2
+
+Released 2018-04-20
+
+ * Include JSON DDL files
+ * Add Licencing files and contribution guidelines
+
 ## 4.0.1
 
 Release 2018-03-19
