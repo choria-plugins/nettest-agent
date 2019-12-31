@@ -1,0 +1,3 @@
+---
+mcollective_agent_nettest::gem_dependencies:
+  net-ping: "2.0.6"
