@@ -19,9 +19,9 @@ module MCollective
         end
 
         it 'should fail if passed an invalid fqdn' do
-          expect{
+          lambda {
             Nettest_fqdnValidator.validate('not a hostname')
-          }.to raise_error ValidatorError
+          }.should raise_error ValidatorError
         end
       end
     end

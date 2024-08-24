@@ -17,21 +17,21 @@ module Mcollective
 
     describe '#raise_message' do
       it 'should print the correct message if 1 is passed' do
-        expect{
+        lambda {
           @app.raise_message(:raise, 1)
-        }.to raise_error("Please specify an action and optional arguments")
+        }.should raise_error("Please specify an action and optional arguments")
       end
 
       it 'should print the correct message if 2 is passed' do
-        expect{
+        lambda {
           @app.raise_message(:raise, 2)
-        }.to raise_error("Action can only to be ping or connect")
+        }.should raise_error("Action can only to be ping or connect")
       end
 
       it 'should print the correct message if 3 is passed' do
-        expect{
+        lambda {
           @app.raise_message(:raise, 3)
-        }.to raise_error("Do you really want to perform network tests unfiltered? (y/n): ")
+        }.should raise_error("Do you really want to perform network tests unfiltered? (y/n): ")
       end
     end
 
@@ -107,7 +107,7 @@ module Mcollective
         resultset = [{:data => {:exitcode => 0,:rtt => '1.000'},:statuscode => 0,:sender => 'rspec1'}]
         @app.configuration[:action] = 'ping'
         @app.configuration[:arguments] = {:fqdn => 'www.rspec.com'}
-        rpcclient.expects(:send).with('ping', :fqdn => 'www.rspec.com').returns(resultset)
+        rpcclient.expects(:send).with('ping', { :fqdn => 'www.rspec.com' }).returns(resultset)
         rpcclient.stubs(:verbose).returns(false)
         rpcclient.expects(:stats).returns('stats')
         @app.expects(:halt).with('stats')
