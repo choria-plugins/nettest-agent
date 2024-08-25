@@ -8,19 +8,19 @@ module MCollective
     describe NettestAgent do
       describe '#is_hostname?' do
         it 'should return true on valid hostname' do
-          NettestAgent.is_hostname?('host1.example.com').should be_true
-          NettestAgent.is_hostname?('example.com').should be_true
-          NettestAgent.is_hostname?('localhost').should be_true
+          NettestAgent.is_hostname?('host1.example.com').should be_truthy
+          NettestAgent.is_hostname?('example.com').should be_truthy
+          NettestAgent.is_hostname?('localhost').should be_truthy
         end
 
         it 'should return false on ip address' do
-          NettestAgent.is_hostname?('1.2.3.4').should be_false
+          NettestAgent.is_hostname?('1.2.3.4').should be_falsey
         end
 
         it 'should return false on anything else' do
-          NettestAgent.is_hostname?("this string is not a hostname").should be_false
-          NettestAgent.is_hostname?("www.rspec.com/rspec").should be_false
-          NettestAgent.is_hostname?("localhost#").should be_false
+          NettestAgent.is_hostname?("this string is not a hostname").should be_falsey
+          NettestAgent.is_hostname?("www.rspec.com/rspec").should be_falsey
+          NettestAgent.is_hostname?("localhost#").should be_falsey
         end
       end
 

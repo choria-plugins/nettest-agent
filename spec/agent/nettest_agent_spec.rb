@@ -103,7 +103,7 @@ module MCollective
             socket.stubs(:close)
 
             connected, connect_string, connect_time = Nettest.testconnect('1.2.3.4', 8080)
-            connected.should be_true
+            connected.should be_truthy
             connect_string.should == "Connected"
             connect_time.should == 1
           end
@@ -112,7 +112,7 @@ module MCollective
             Time.expects(:now).raises('error')
 
             connected, connect_string, connect_time = Nettest.testconnect('1.2.3.4', 8080)
-            connected.should be_false
+            connected.should be_falsey
             connect_string.should == "Connection Refused"
             connect_time.should == nil
           end
@@ -121,7 +121,7 @@ module MCollective
             Timeout.expects(:timeout).with(2).raises(Timeout::Error)
 
             connected, connect_string, connect_time = Nettest.testconnect('1.2.3.4', 8080)
-            connected.should be_false
+            connected.should be_falsey
             connect_string.should == "Connection Timeout"
             connect_time.should == nil
 
