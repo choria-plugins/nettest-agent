@@ -4,7 +4,7 @@ require 'spec_helper'
 module Mcollective
   describe "nettest application" do
     before do
-      application_file = File.join(File.dirname(__FILE__), "../../", "application","nettest.rb")
+      application_file = File.join(File.dirname(__FILE__), "../../",  "files", "mcollective", "application","nettest.rb")
       @util = MCollective::Test::ApplicationTest.new("nettest", :application_file => application_file)
       @app = @util.plugin
     end
