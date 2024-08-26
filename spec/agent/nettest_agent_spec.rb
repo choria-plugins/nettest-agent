@@ -1,15 +1,15 @@
 #!/usr/bin/env rspec
 
 require 'spec_helper'
-require File.join(File.dirname(__FILE__), '../../', 'util', 'nettest_agent.rb')
-require File.join(File.dirname(__FILE__), "../../", "agent", "nettest.rb")
+require File.join(File.dirname(__FILE__), '../../',  'files', 'mcollective', 'util', 'nettest_agent.rb')
+require File.join(File.dirname(__FILE__), "../../",  "files", "mcollective", "agent", "nettest.rb")
 
 module MCollective
   module Agent
     class Nettest
       describe "nettest agent" do
         before do
-          agent_file = File.join(File.dirname(__FILE__), "../../", "agent", "nettest.rb")
+          agent_file = File.join(File.dirname(__FILE__), "../../",  "files", "mcollective", "agent", "nettest.rb")
           @agent = MCollective::Test::LocalAgentTest.new("nettest", :agent_file => agent_file).plugin
         end
 

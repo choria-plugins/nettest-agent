@@ -1,7 +1,7 @@
 #!/usr/bin/env rspec
 
 require 'spec_helper'
-require File.join(File.dirname(__FILE__), File.join('../../', 'aggregate', 'nettest_mma.rb'))
+require File.join(File.dirname(__FILE__), File.join('../../', 'files', 'mcollective', 'aggregate', 'nettest_mma.rb'))
 
 module MCollective
   class Aggregate

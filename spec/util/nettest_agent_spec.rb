@@ -1,7 +1,7 @@
 #!/usr/bin/evn rspec
 
 require 'spec_helper'
-require File.join(File.dirname(__FILE__), File.join('../../', 'util', 'nettest_agent.rb'))
+require File.join(File.dirname(__FILE__), File.join('../../', 'files', 'mcollective', 'util', 'nettest_agent.rb'))
 
 module MCollective
   module Util

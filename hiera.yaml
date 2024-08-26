@@ -6,9 +6,9 @@ defaults:
   data_hash: yaml_data
 
 hierarchy:
+  - name: "Distribution Name"
+    path: "os/%{facts.os.family}.yaml"
   - name: "plugin"
     path: "plugin.yaml"
-  - name: "os-specific"
-    path: "os/%{facts.os.family}.yaml"
   - name: "defaults"
     path: "defaults.yaml"
