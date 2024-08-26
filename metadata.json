@@ -1,6 +1,6 @@
 {
   "name": "choria-mcollective_agent_nettest",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "author": "Dean Smith <dean@zelotus.com>",
   "license": "BSD",
   "summary": "Perform network tests from a mcollective host",
